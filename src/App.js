@@ -3,7 +3,7 @@ import {useState} from "react";
 
 const CartDrawer = () => {
     return (
-        <div  className="cartDrawer">
+        <div className="cartDrawer">
             <div className="cart">
                 <h2>Cart</h2>
                 <div className='items'>
@@ -38,19 +38,11 @@ const CartDrawer = () => {
 };
 
 
-
-
-
-
-
-
-
 function App() {
 
 
     const [flag, setFlag] = useState(false)
     const onToggle = () => setFlag(prev => !prev);
-
 
 
     return (
@@ -61,16 +53,18 @@ function App() {
 
 
             <header className="header">
+                <div className="container">
+                    <div className="logoImg">
+                        <img src="/img/logo.png" alt="logo"/>
+                    </div>
+                    <div>
+                        <h1>StarshipStore</h1>
+                    </div>
 
-                <div className="logoImg">
-                    <img src="/img/logo.png" alt="logo"/>
-                </div>
-                <div>
-                    <h1>StarshipStore</h1>
-                </div>
-                <img onClick={onToggle} className="imgCart" src="/img/cart.svg" alt="cart"/>
-                <span style={{whiteSpace: 'nowrap'}}>1,000,000,000 cred.</span>
+                    <img onClick={onToggle} className="imgCart" src="/img/cart.svg" alt="cart"/>
 
+                    <span style={{whiteSpace: 'nowrap'}}>1,000,000,000 cred.</span>
+                </div>
             </header>
 
 
@@ -147,10 +141,8 @@ function App() {
                     </div>
 
 
-
                 </div>
             </main>
-
 
 
             <footer className="footer">

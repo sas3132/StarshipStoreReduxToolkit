@@ -47,14 +47,14 @@ button {
 .wrapper {
   min-height: 100vh;
   display: grid;
-  grid-template: minmax(70px, auto) 1fr  minmax(26px, auto)  / 1fr;
+  grid-template: minmax(64px, auto) 1fr  minmax(50px, auto)  / 1fr;
   grid-template-areas:
           "header"
           "main"
           "footer";
 
-  max-width: 1080px;
-  margin: 0 auto;
+  //max-width: 1080px;
+  //margin: 0 auto;
 
 }
 
@@ -68,7 +68,12 @@ button {
   z-index: 1;
   //grid-template-columns: 1fr;
   justify-items: end;
-  margin-top: 20px;
+
+
+  grid-template-columns: minmax(auto,1080px);
+
+  //max-width: 1080px;
+  margin: 20px  auto 0  auto;
 
   .cart {
     max-width: 400px;
@@ -162,40 +167,57 @@ button {
 header {
   position: fixed;
   z-index: 1;
-  max-width: 1080px;
+  //max-width: 1080px;
+  left: 0;
+  right: 0;
   grid-area: header;
   display: grid;
   background: #161B1C;
-  padding:12px;
+
+  //grid-template-columns:60px minmax(auto, 100vw) auto auto;
+  //grid-template: 1fr/ 1fr minmax(auto, 59px) minmax(auto, 700px) auto auto 1fr;
+
+  border-bottom: 1px solid rgba(204, 204, 204, 0.5);
+
+.container{
+  max-width: 1080px;
+  margin:  auto;
+  display: grid;
   grid-template-columns:60px minmax(auto, 100vw) auto auto;
-  //grid-template: 1fr/minmax(auto,60px)  minmax(auto,800px) auto auto;
-
-
   align-items: center;
-  border-bottom: 1px solid #CCCCCC;
-
-
+  padding: 9px 0 ;
+}
+  @media (max-width: 1080px) {
+    .container {
+      padding: 9px;
+    }
+  }
 
   h1 {
     font-family: "Damion", cursive;
     font-weight: normal;
     color: #CCCCCC;
     margin: 0;
+
+    //grid-column: 3/4;
   }
 
-  //img{
-  //  margin-right:10px;
-  //}
+
   .logoImg {
     display: grid;
     align-items: center;
 
+    //grid-column: 2/3;
+
   }
 
   span {
+
     color: #CCCCCC;
     font-size: 14px;
     margin-left: 10px;
+
+    //grid-column: 5/6;
 
   }
 
@@ -203,11 +225,16 @@ header {
     span {
       display: none;
     }
+
+
   }
 
   .imgCart {
     margin-left: 10px;
     transition: box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out;
+
+    //grid-column: 4/5;
+
 
     &:hover {
       filter: drop-shadow(0px 0px 10px rgba(55, 197, 241, 0.72));
@@ -215,13 +242,20 @@ header {
     }
   }
 
+
+
 }
 
-.main {
+main {
   display: grid;
   grid-area: main;
-  margin-top: 20px;
+  //margin-top: 20px;
   align-content: start;
+  grid-template-columns: minmax(auto,1080px);
+
+  //max-width: 1080px;
+  margin: 20px  auto 0  auto;
+
 
 }
 
@@ -239,6 +273,7 @@ header {
     object-fit: cover;
     width: 100%;
     max-height: 300px;
+    display: block; //убирает непонятный отступ внизу
 
 
   }
@@ -350,8 +385,12 @@ header {
   align-items: center;
   text-align: right;
   margin-top: 5px;
+  justify-items: center;
+
+
 
   .footerText {
+
     font-size: 10px;
     margin-right: 10px;;
     color: #CCCCCC;

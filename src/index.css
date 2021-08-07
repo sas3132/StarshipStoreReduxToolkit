@@ -34,10 +34,8 @@ button {
 .wrapper {
   min-height: 100vh;
   display: grid;
-  grid-template: minmax(70px, auto) 1fr minmax(26px, auto)/1fr;
+  grid-template: minmax(64px, auto) 1fr minmax(50px, auto)/1fr;
   grid-template-areas: "header" "main" "footer";
-  max-width: 1080px;
-  margin: 0 auto;
 }
 
 .cartDrawer {
@@ -47,7 +45,8 @@ button {
   grid-row: 2/-2;
   z-index: 1;
   justify-items: end;
-  margin-top: 20px;
+  grid-template-columns: minmax(auto, 1080px);
+  margin: 20px auto 0 auto;
 }
 .cartDrawer .cart {
   max-width: 400px;
@@ -118,14 +117,25 @@ button {
 header {
   position: fixed;
   z-index: 1;
-  max-width: 1080px;
+  left: 0;
+  right: 0;
   grid-area: header;
   display: grid;
   background: #161B1C;
-  padding: 12px;
+  border-bottom: 1px solid rgba(204, 204, 204, 0.5);
+}
+header .container {
+  max-width: 1080px;
+  margin: auto;
+  display: grid;
   grid-template-columns: 60px minmax(auto, 100vw) auto auto;
   align-items: center;
-  border-bottom: 1px solid #CCCCCC;
+  padding: 9px 0;
+}
+@media (max-width: 1080px) {
+  header .container {
+    padding: 9px;
+  }
 }
 header h1 {
   font-family: "Damion", cursive;
@@ -156,11 +166,12 @@ header .imgCart:hover {
   transform: translateY(-2px);
 }
 
-.main {
+main {
   display: grid;
   grid-area: main;
-  margin-top: 20px;
   align-content: start;
+  grid-template-columns: minmax(auto, 1080px);
+  margin: 20px auto 0 auto;
 }
 
 .coverFalcon {
@@ -174,6 +185,7 @@ header .imgCart:hover {
   object-fit: cover;
   width: 100%;
   max-height: 300px;
+  display: block;
 }
 .coverFalcon .centeredText {
   position: absolute;
@@ -253,6 +265,7 @@ header .imgCart:hover {
   align-items: center;
   text-align: right;
   margin-top: 5px;
+  justify-items: center;
 }
 .footer .footerText {
   font-size: 10px;
