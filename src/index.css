@@ -212,7 +212,7 @@ main {
 }
 .productsItems .productsItem:hover {
   box-shadow: -15px 15px 21px -9px rgba(28, 117, 145, 0.25);
-  transform: translateY(-5px);
+  transform: translateY(-4px);
 }
 .productsItems .productsImg {
   position: relative;
