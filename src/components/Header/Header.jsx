@@ -3,6 +3,8 @@ import React from 'react';
 const Header = ({hideShowCart,changeSearchInput,searchValue,setSearchValue}) => {
 
 
+
+
     return (
         <header className="header">
 
@@ -17,10 +19,10 @@ const Header = ({hideShowCart,changeSearchInput,searchValue,setSearchValue}) => 
 
                 <div  className="searchForm">
                     <label>
-                        <input onChange={changeSearchInput} value={searchValue}  type="search"
+                        <input style={searchValue === '' ? {width: null}: {width: '230px'}} onChange={changeSearchInput} value={searchValue}  type="search"
                                 className="searchField"
                                 placeholder="Search"
-                                />
+                        />
                     </label>
                 </div>
 

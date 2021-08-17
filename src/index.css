@@ -283,6 +283,7 @@ main {
 }
 
 .searchField {
+  font-family: "Inter", system-ui;
   background-color: transparent;
   background-image: url("/components/Header/searchIcon.svg");
   background-position: 5px center;
@@ -291,6 +292,10 @@ main {
   border: none;
   cursor: pointer;
   height: 30px;
+  color: #777777;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
   padding: 0 0 0 30px;
   position: relative;
   -webkit-transition: width 400ms ease, background 400ms ease;
