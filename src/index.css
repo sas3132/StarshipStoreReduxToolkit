@@ -50,6 +50,7 @@ button {
 }
 .cartDrawer .cart {
   max-width: 400px;
+  min-width: 400px;
   display: grid;
   background: #191f20;
   align-content: start;
@@ -92,6 +93,7 @@ button {
 }
 .cartDrawer .delNameItem img {
   margin-right: 7px;
+  cursor: pointer;
 }
 .cartDrawer .totalCred {
   display: grid;
@@ -152,7 +154,7 @@ header span {
   font-size: 14px;
   margin-left: 10px;
 }
-@media (max-width: 450px) {
+@media (max-width: 500px) {
   header span {
     display: none;
   }
@@ -164,6 +166,12 @@ header .imgCart {
 header .imgCart:hover {
   filter: drop-shadow(0px 0px 10px rgba(55, 197, 241, 0.72));
   transform: translateY(-2px);
+}
+header .cartBlock {
+  display: grid;
+  cursor: pointer;
+  grid-template-columns: auto auto;
+  align-items: center;
 }
 
 main {
@@ -272,6 +280,49 @@ main {
   margin-right: 10px;
   color: #CCCCCC;
   text-align: right;
+}
+
+.searchField {
+  background-color: transparent;
+  background-image: url("/components/Header/searchIcon.svg");
+  background-position: 5px center;
+  background-repeat: no-repeat;
+  background-size: 18px 18px;
+  border: none;
+  cursor: pointer;
+  height: 30px;
+  padding: 0 0 0 30px;
+  position: relative;
+  -webkit-transition: width 400ms ease, background 400ms ease;
+  transition: width 400ms ease, background 400ms ease;
+  width: 0;
+}
+
+.searchField:focus {
+  font-family: "Inter", system-ui;
+  background-color: #161b1c;
+  color: #777777;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  cursor: text;
+  outline: 0;
+  width: 230px;
+}
+
+.search-submit {
+  display: none;
+}
+
+input[type=search] {
+  -webkit-appearance: textfield;
+}
+
+input[type=search]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  background: url("/components/Header/delSearch.svg");
 }
 
 /*# sourceMappingURL=index.css.map */
