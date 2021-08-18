@@ -1,0 +1,107 @@
+.cartDrawer {
+  display: grid;
+  background: rgba(22, 27, 28, 0.5);
+  grid-column: 1 / 1;
+  grid-row: 2 / -2;
+  //opacity: 0.33;
+  z-index: 1;
+  //grid-template-columns: 1fr;
+  justify-items: end;
+
+
+  grid-template-columns: minmax(auto, 1080px);
+
+  //max-width: 1080px;
+  margin: 20px auto 0 auto;
+
+  .cart {
+    max-width: 400px;
+    min-width: 375px;
+
+    display: grid;
+    //opacity: 0.33;
+
+    //background: #292E2F;
+    background: #191f20;
+
+    align-content: start;
+    grid-template-rows: auto 1fr;
+    height: 90vh;
+
+
+    h2 {
+      margin: 18px;
+      color: #CCCCCC;
+    }
+  }
+
+  .items {
+
+    overflow: auto;
+  }
+
+  .item {
+    display: grid;
+    grid-template-columns: repeat(20, 1fr);
+    grid-template-rows:auto repeat(20, 1fr);
+
+    margin: 0 18px 15px 18px;
+  }
+
+  .itemImg {
+    object-fit: cover;
+    object-position: center left;
+    width: 100%;
+    height: 100px;
+    grid-column: 1 / -1;
+    grid-row: 1 / -1;
+  }
+
+  .delNameItem {
+    grid-column: 1 / -1;
+    grid-row: 1 / 2;
+    display: grid;
+    grid-template-columns:1fr 30px;
+    //color: #ffffff;
+    align-content: space-between;
+    align-items: center;
+    //background: #9E332E;
+    background: rgba(158, 51, 46, 0.65);
+    //opacity: 0.70;
+
+    p {
+      color: #CCCCCC;
+      margin: 0 0 0 7px;
+
+    }
+
+    img {
+      margin-right: 7px;
+      cursor: pointer;
+    }
+
+  }
+
+  .totalCred {
+    display: grid;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    color: #CDCDCD;
+    margin: 0 18px 15px 18px;
+    justify-items: end;
+  }
+
+  .buttonCheckout {
+    margin: 0 18px 15px 18px;
+    height: 64px;
+    background: #9E332E;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+    color: #CCCCCC;
+  }
+
+}

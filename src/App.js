@@ -33,6 +33,20 @@ const arr = [
         description: {speed: 1200, class: "Starfighter", rating: 1.0},
         cost: 129999,
         img: "/img/productItem3.jpg"
+    },
+    {
+        id: 5,
+        name: "T-65 X-wing starfighter",
+        description: {speed: 1050, class: "Starfighter", rating: 1.0},
+        cost: 149999,
+        img: "/img/productItem5.jpg"
+    },
+    {
+        id: 6,
+        name: "Lambda-class T-4a shuttle",
+        description: {speed: 850, class: "Armed Government Transport", rating: 1.0},
+        cost: 240999,
+        img: "/img/productItem6.jpg"
     }
 ]
 

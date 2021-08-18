@@ -1,4 +1,6 @@
 import React, {useState} from 'react';
+import styles from './ProductItem.module.scss'
+
 
 const ProductItem = ({id, name,description,cost,img,addOnCart,itemSearch}) => {
 
@@ -15,17 +17,18 @@ const addedCartButton = () => {
 
 
     return (
-        <div className="productsItem">
-            <div className="productsImg">
+
+        <div className={styles.productsItem}>
+            <div className={styles.productsImg}>
                 <img src={img} alt="imgStarS"/>
             </div>
-            <div className="productInfo">
-                <b className="productName">{name}</b>
-                <p className="productDescription">Speed: {description.speed} km/h<br/>
+            <div className={styles.productInfo}>
+                <b className={styles.productName}>{name}</b>
+                <p className={styles.productDescription}>Speed: {description.speed} km/h<br/>
                     Class: {description.class}<br/>
                     Hyperdrive Rating: {description.rating}
                 </p>
-                <div className="productButton">
+                <div className={styles.productButton}>
                     <b>Cost: {cost} credits</b>
                     <img onClick={addedCartButton} src={onCart ?"/img/productOnCart.svg":"/img/buttonBuy.svg"} alt="buy"/>
                 </div>

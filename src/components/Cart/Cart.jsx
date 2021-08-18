@@ -1,27 +1,27 @@
 import React from 'react';
-
+import styles from './Cart.module.scss'
 
 const Cart = ({cartItems,removeItemCart}) => {
 
 
     return (
-        <div className="cartDrawer">
-            <div className="cart">
+        <div className={styles.cartDrawer}>
+            <div className={styles.cart}>
                 <h2>Cart</h2>
-                <div className='items'>
+                <div className={styles.items}>
                     {cartItems.map((obj,idx)=>(
-                        <div key={obj.cost+idx} className="item">
-                            <img className="itemImg" src={obj.img} alt=""/>
-                            <section className="delNameItem">
-                                <p className="delNameItemP">{obj.name}</p>
-                                <img onClick={()=>removeItemCart(obj.id)} className="delItemCart" src="/img/delItemCart.svg" alt=""/>
+                        <div key={obj.cost+idx} className={styles.item}>
+                            <img className={styles.itemImg} src={obj.img} alt=""/>
+                            <section className={styles.delNameItem}>
+                                <p className={styles.delNameItemP}>{obj.name}</p>
+                                <img onClick={()=>removeItemCart(obj.id)} className={styles.delItemCart} src="/img/delItemCart.svg" alt=""/>
                             </section>
                         </div>
                     ))}
 
                 </div>
-                <p className="totalCred">{}Total: 1,000,000,000 cred.</p>
-                <button className="buttonCheckout">Checkout</button>
+                <p className={styles.totalCred}>{}Total: 1,000,000,000 cred.</p>
+                <button className={styles.buttonCheckout}>Checkout</button>
             </div>
 
         </div>

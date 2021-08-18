@@ -1,0 +1,19 @@
+.footer {
+  grid-area: footer;
+  background: #161B1C;
+  display: grid;
+  align-items: center;
+  text-align: right;
+  margin-top: 5px;
+  justify-items: center;
+
+
+  .footerText {
+
+    font-size: 10px;
+    margin-right: 10px;;
+    color: #CCCCCC;
+    text-align: right;
+  }
+
+}
