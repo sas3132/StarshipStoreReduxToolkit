@@ -30,7 +30,7 @@ const addedCartButton = () => {
                 </p>
                 <div className={styles.productButton}>
                     <b>Cost: {cost} credits</b>
-                    <img onClick={addedCartButton} src={onCart ?"/img/productOnCart.svg":"/img/buttonBuy.svg"} alt="buy"/>
+                    <img onClick={addedCartButton} src={onCart ?"/img/productOnCart.svg":"/img/buttonBuy1.svg"} alt="buy"/>
                 </div>
             </div>
         </div>
