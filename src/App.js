@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {createContext, useState} from "react";
 import Header from "./components/Header/Header";
 import Cart from "./components/Cart/Cart";
 import Footer from "./components/Footer/Footer";
@@ -49,6 +49,8 @@ const arr = [
         img: "/img/productItem6.jpg"
     }
 ]
+export const  ThemeContext = createContext({})
+
 
 function App() {
     const [showCart, setShowCart] = useState(false)
@@ -62,7 +64,14 @@ function App() {
     const hideShowCart = () => setShowCart(prev => !prev);
 
     const addOnCart = (obj) => {
-        setCartItems(prev => [...prev, obj])
+
+        if(cartItems.find((item) => item.id === obj.id)){
+            setCartItems(prev=> prev.filter(item=>item.id !== obj.id))
+
+        }else{
+            setCartItems(prev => [...prev, obj])
+        }
+
     }
 
     const removeItemCart = (id) => {
@@ -84,7 +93,20 @@ function App() {
         )
     }
 
+    const itemAddOnCart = (id) => { //контекст на изменение кнопки после удаления из корзины
+      return (
+          cartItems.some((obj) => obj.id === id)
+
+
+      )
+    }
+
+
+
+
     return (
+
+        <ThemeContext.Provider value={{itemAddOnCart}}>
         <div className="wrapper clear">
             {showCart && <Cart cartItems={cartItems} removeItemCart={removeItemCart}/>}
             <Header hideShowCart={hideShowCart} changeSearchInput={changeSearchInput} searchValue={searchValue}/>
@@ -98,16 +120,16 @@ function App() {
                             {...item}
                             addOnCart={addOnCart}
 
+                            // addButton={cartItems.some(obj=>obj.id === item.id)}
+
                         />
                     ))}
 
                 </div>
             </main>
-
-
             <Footer/>
         </div>
-
+        </ThemeContext.Provider>
     );
 }
 

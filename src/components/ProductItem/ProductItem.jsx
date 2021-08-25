@@ -1,17 +1,18 @@
-import React, {useState} from 'react';
+import React, {useContext, useState} from 'react';
 import styles from './ProductItem.module.scss'
+import {ThemeContext} from "../../App";
 
 
-const ProductItem = ({id, name,description,cost,img,addOnCart,itemSearch}) => {
+const ProductItem = ({id, name,description,cost,img,addOnCart,}) => {
 
-const[onCart, setOnCart]=useState(false)
-
+// const[onCart, setOnCart]=useState(addButton)
+const {itemAddOnCart} = useContext(ThemeContext)
 
 
 
 const addedCartButton = () => {
     addOnCart({id, name,description,cost,img,})
-  setOnCart(!onCart)
+  // setOnCart(!onCart)
 
 }
 
@@ -30,7 +31,7 @@ const addedCartButton = () => {
                 </p>
                 <div className={styles.productButton}>
                     <b>Cost: {cost} credits</b>
-                    <img onClick={addedCartButton} src={onCart ?"/img/productOnCart.svg":"/img/buttonBuy1.svg"} alt="buy"/>
+                    <img onClick={addedCartButton} src={itemAddOnCart(id) ?"/img/productOnCart.svg":"/img/buttonBuy1.svg"} alt="buy"/>
                 </div>
             </div>
         </div>
