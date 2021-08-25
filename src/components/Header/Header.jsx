@@ -1,9 +1,12 @@
-import React from 'react';
+import React, {useState} from 'react';
 import styles from './Header.module.scss';
+import {logDOM} from "@testing-library/react";
 
 
 
 const Header = ({hideShowCart,changeSearchInput,searchValue,setSearchValue}) => {
+
+
 
     return (
         <header className={styles.header}>
@@ -13,13 +16,13 @@ const Header = ({hideShowCart,changeSearchInput,searchValue,setSearchValue}) => 
                 <div className={styles.logoImg}>
                     <img src="/img/logo.png" alt="logo"/>
                 </div>
-                <div>
+                <div className={styles.titleHome}>
                     <h1>StarshipStore</h1>
                 </div>
 
                 <div   className={styles.searchForm}>
                     <label>
-                        <input style={searchValue === '' ? {width: null}: {width: '230px'}} onChange={changeSearchInput} value={searchValue}  type="search"
+                        <input  style={searchValue === '' ? {width: null}: {width: '230px'}} onChange={changeSearchInput} value={searchValue}  type="search"
                                 className={styles.searchField}
                                 placeholder="Search"
                         />
