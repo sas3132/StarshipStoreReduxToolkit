@@ -1,12 +1,14 @@
-import React, {useState} from 'react';
+import React, {useContext, useState} from 'react';
 import styles from './Header.module.scss';
 import {logDOM} from "@testing-library/react";
+import {ThemeContext} from "../../App";
 
 
 
 const Header = ({hideShowCart,changeSearchInput,searchValue,setSearchValue}) => {
+    const {cartItems} = useContext(ThemeContext)
 
-
+    const total = cartItems.reduce((sum, obj) => sum + obj.cost, 0)
 
     return (
         <header className={styles.header}>
@@ -32,7 +34,7 @@ const Header = ({hideShowCart,changeSearchInput,searchValue,setSearchValue}) => 
                 <div className={styles.cartBlock} onClick={hideShowCart}>
                     <img  className={styles.imgCart} src="/img/cart.svg" alt="cart"/>
 
-                    <span style={{whiteSpace: 'nowrap'}}>1,000,000,000 cred.</span>
+                    <span style={{whiteSpace: 'nowrap'}}>{total.toLocaleString()} cred.</span>
                 </div>
             </div>
         </header>

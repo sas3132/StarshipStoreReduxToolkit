@@ -1,8 +1,12 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import styles from './Cart.module.scss'
+
 
 const Cart = ({cartItems,removeItemCart}) => {
 
+    // const {cartItems} = useContext(ThemeContext)
+
+    const total = cartItems.reduce((sum, obj) => sum + obj.cost, 0)
 
     return (
         <div className={styles.cartDrawer}>
@@ -20,7 +24,7 @@ const Cart = ({cartItems,removeItemCart}) => {
                     ))}
 
                 </div>
-                <p className={styles.totalCred}>{}Total: 1,000,000,000 cred.</p>
+                <p className={styles.totalCred}>{}Total: {total.toLocaleString()} cred.</p>
                 <button className={styles.buttonCheckout}>Checkout</button>
             </div>
 
