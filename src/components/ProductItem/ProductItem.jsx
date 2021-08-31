@@ -11,7 +11,7 @@ const {itemAddOnCart} = useContext(ThemeContext)
 
 
 const addedCartButton = () => {
-    addOnCart({id, name,description,cost,img,})
+    addOnCart({id,parentId:id, name,description,cost,img,})
   // setOnCart(!onCart)
 
 }
@@ -30,8 +30,8 @@ const addedCartButton = () => {
                     Hyperdrive Rating: {description.rating}
                 </p>
                 <div className={styles.productButton}>
-                    <b>Cost: {cost} credits</b>
-                    <img onClick={addedCartButton} src={itemAddOnCart(id) ?"/img/productOnCart.svg":"/img/buttonBuy1.svg"} alt="buy"/>
+                    <b>Cost: {cost.toLocaleString()} credits</b>
+                    <img onClick={()=>addedCartButton()} src={itemAddOnCart(id) ?"/img/productOnCart.svg":"/img/buttonBuy1.svg"} alt="buy"/>
                 </div>
             </div>
         </div>
