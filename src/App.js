@@ -51,6 +51,14 @@ import axios from "axios";
 //     }
 // ]
 
+/*TODO занятся кнопкой заказа может с отправкой на мыло
+* Карусель рекламыл
+* Добавить фавориты а нужны ли, страница заказов тогда прокидывать react-router-dom
+*  */
+
+
+
+
 
 export const ThemeContext = createContext({})
 
@@ -83,7 +91,14 @@ function App() {
     }, [])
 
 
-    const hideShowCart = () => setShowCart(prev => !prev);
+    const hideShowCart = () => {
+        setShowCart(prev => !prev);
+        if (!showCart) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.removeAttribute("style");;
+        }
+    }
 
     const addOnCart = async (obj) => {
 
@@ -152,7 +167,7 @@ function App() {
 
         <ThemeContext.Provider value={{itemAddOnCart, cartItems}}>
             <div className="wrapper clear">
-                {showCart && <Cart cartItems={cartItems} removeItemCart={removeItemCart}/>}
+                {showCart && <Cart showCart={showCart} cartItems={cartItems} removeItemCart={removeItemCart}/>}
                 <Header hideShowCart={hideShowCart} changeSearchInput={changeSearchInput} searchValue={searchValue}/>
 
                 <main className="main">

@@ -2,13 +2,14 @@ import React, {useContext} from 'react';
 import styles from './Cart.module.scss'
 
 
-const Cart = ({cartItems,removeItemCart}) => {
+const Cart = ({cartItems,removeItemCart, showCart}) => {
 
     // const {cartItems} = useContext(ThemeContext)
 
     const total = cartItems.reduce((sum, obj) => sum + obj.cost, 0)
 
     return (
+        // <div className={`${styles.cartDrawer} ${showCart ? document.body.style.overflow = 'hidden' : ''}`}>
         <div className={styles.cartDrawer}>
             <div className={styles.cart}>
                 <h2>Cart</h2>

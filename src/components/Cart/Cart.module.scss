@@ -17,16 +17,18 @@
   .cart {
     max-width: 400px;
     min-width: 375px;
-
     display: grid;
-    //opacity: 0.33;
 
+    //opacity: 0.33;
     //background: #292E2F;
+
     background: #191f20;
 
     align-content: start;
     grid-template-rows: auto 1fr;
-    height: 90vh;
+    //height: 91vh;
+    height: calc(100vh - 83px);
+
 
 
     h2 {
