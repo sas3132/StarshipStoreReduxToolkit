@@ -1,4 +1,4 @@
-import React, {useContext, useState} from 'react';
+import React, {useContext, useRef, useState} from 'react';
 import styles from './Header.module.scss';
 import {logDOM} from "@testing-library/react";
 import {ThemeContext} from "../../App";
@@ -6,6 +6,12 @@ import {ThemeContext} from "../../App";
 
 
 const Header = ({hideShowCart,changeSearchInput,searchValue,setSearchValue}) => {
+
+
+
+
+
+
     const {cartItems} = useContext(ThemeContext)
 
     const total = cartItems.reduce((sum, obj) => sum + obj.cost, 0)

@@ -52,7 +52,8 @@ import axios from "axios";
 // ]
 
 /*TODO занятся кнопкой заказа может с отправкой на мыло
-* Карусель рекламыл
+*скролл в ноль при открытой корзине
+* Карусель рекламы
 * Добавить фавориты а нужны ли, страница заказов тогда прокидывать react-router-dom
 *  */
 
@@ -170,7 +171,7 @@ function App() {
                 {showCart && <Cart showCart={showCart} cartItems={cartItems} removeItemCart={removeItemCart}/>}
                 <Header hideShowCart={hideShowCart} changeSearchInput={changeSearchInput} searchValue={searchValue}/>
 
-                <main className="main">
+                <main  className="main">
                     <Advertising/>
                     <div className="productsItems">
                         {itemSearch(items).map((item, idx) => (
