@@ -6,6 +6,7 @@ import ProductItem from "./components/ProductItem/ProductItem";
 import Advertising from "./components/Advertising/Advertising";
 import axios from "axios";
 
+
 // const arr = [
 //     {
 //         "id": 1,
@@ -52,7 +53,7 @@ import axios from "axios";
 // ]
 
 /*TODO занятся кнопкой заказа может с отправкой на мыло
-*скролл в ноль при открытой корзине
+
 * Карусель рекламы
 * Добавить фавориты а нужны ли, страница заказов тогда прокидывать react-router-dom
 *  */

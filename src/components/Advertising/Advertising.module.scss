@@ -1,13 +1,15 @@
 .coverFalcon {
   margin-bottom: 20px;
+
   position: relative;
   text-align: center;
   max-height: 300px;
   width: auto;
   //overflow: hidden;
 
-  img {
 
+
+  img {
     object-fit: cover;
     width: 100%;
     max-height: 300px;
@@ -17,6 +19,7 @@
   }
 
   .centeredText {
+    z-index: 1;
     position: absolute;
     top: 50%;
     left: 20%;
@@ -30,6 +33,6 @@
 
     color: #861410;
 
-
   }
+
 }
