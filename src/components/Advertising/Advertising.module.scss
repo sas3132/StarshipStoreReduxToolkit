@@ -6,8 +6,18 @@
   max-height: 300px;
   width: auto;
   //overflow: hidden;
+  --swiper-navigation-size: 40px;
 
 
+  :global(.swiper-pagination-bullet) {
+    background: white;
+    border-radius: .5rem;
+
+  }
+  :global(.swiper-pagination-bullet-active) {
+    background-color: #861410;
+
+  }
 
   img {
     object-fit: cover;

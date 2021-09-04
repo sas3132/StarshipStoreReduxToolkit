@@ -4,6 +4,14 @@
   text-align: center;
   max-height: 300px;
   width: auto;
+  --swiper-navigation-size: 40px;
+}
+.coverFalcon :global(.swiper-pagination-bullet) {
+  background: white;
+  border-radius: 0.5rem;
+}
+.coverFalcon :global(.swiper-pagination-bullet-active) {
+  background-color: #861410;
 }
 .coverFalcon img {
   object-fit: cover;
