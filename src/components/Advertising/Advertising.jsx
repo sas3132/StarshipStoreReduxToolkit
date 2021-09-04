@@ -26,7 +26,7 @@ const Advertising = () => {
         <Swiper  className={styles.coverFalcon} pagination={{
             "clickable": true
         }} autoplay={{
-            "delay": 5000,
+            "delay": 10000,
             "disableOnInteraction": false
         }}  loop={true} navigation={false} style={{'--swiper-navigation-color': '#861410',marginLeft: 0,marginRight: 0, zIndex: 0}}>
             <div className={styles.centeredText}>Buy now <span style={{color: '#D4E3EA', whiteSpace: 'nowrap'}}> Fly now</span>
