@@ -1,16 +1,17 @@
 import React, {useContext} from 'react';
 import styles from './Cart.module.scss'
 import {logDOM} from "@testing-library/react";
+import axios from "axios";
 
 
 const Cart = ({cartItems,removeItemCart, showCart}) => {
 
     // const {cartItems} = useContext(ThemeContext)
 
-    const orderButton = () => {
-        return (
-            console.log(cartItems)
-        )
+    const orderButton = async () => {
+        const data = await axios.post('https://612e1f69d11e5c00175583a2.mockapi.io/orders', cartItems)
+
+
     }
 
     const total = cartItems.reduce((sum, obj) => sum + obj.cost, 0)
