@@ -1,10 +1,17 @@
 import React, {useContext} from 'react';
 import styles from './Cart.module.scss'
+import {logDOM} from "@testing-library/react";
 
 
 const Cart = ({cartItems,removeItemCart, showCart}) => {
 
     // const {cartItems} = useContext(ThemeContext)
+
+    const orderButton = () => {
+        return (
+            console.log(cartItems)
+        )
+    }
 
     const total = cartItems.reduce((sum, obj) => sum + obj.cost, 0)
 
@@ -26,7 +33,7 @@ const Cart = ({cartItems,removeItemCart, showCart}) => {
 
                 </div>
                 <p className={styles.totalCred}>{}Total: {total.toLocaleString()} cred.</p>
-                <button className={styles.buttonCheckout}>Checkout</button>
+                <button onClick={orderButton} className={styles.buttonCheckout}>Checkout</button>
             </div>
 
         </div>
