@@ -166,7 +166,7 @@ function App() {
 
     return (
 
-        <ThemeContext.Provider value={{itemAddOnCart, cartItems}}>
+        <ThemeContext.Provider value={{setCartItems,itemAddOnCart, cartItems}}>
             <div className="wrapper clear">
                 {showCart && <Cart showCart={showCart} cartItems={cartItems} removeItemCart={removeItemCart}/>}
                 <Header hideShowCart={hideShowCart} changeSearchInput={changeSearchInput} searchValue={searchValue}/>
