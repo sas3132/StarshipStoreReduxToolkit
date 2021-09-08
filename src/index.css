@@ -7,6 +7,11 @@ body {
   background-color: #101415;
 }
 
+button {
+  padding: 0;
+  border: 0;
+}
+
 .clear * {
   box-sizing: border-box;
   outline: none;
