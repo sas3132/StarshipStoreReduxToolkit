@@ -5,7 +5,13 @@ import Footer from "./components/Footer/Footer";
 import ProductItem from "./components/ProductItem/ProductItem";
 import Advertising from "./components/Advertising/Advertising";
 import axios from "axios";
-
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link
+} from "react-router-dom";
+import Orders from "./components/Orders/Orders";
 
 // const arr = [
 //     {
@@ -53,8 +59,8 @@ import axios from "axios";
 // ]
 
 /*TODO
-занятся кнопкой заказа может с отправкой на мыло!
 Добавить фавориты а нужны ли, страница заказов тогда прокидывать react-router-dom
+заняться кнопкой заказа, анимация, может с отправкой на мыло!
  */
 
 
@@ -69,6 +75,7 @@ function App() {
     const [showCart, setShowCart] = useState(false)
     const [cartItems, setCartItems] = useState([])
     const [searchValue, setSearchValue] = useState('')
+
 
     useEffect( () => {
 
@@ -166,25 +173,32 @@ function App() {
 
     return (
 
-        <ThemeContext.Provider value={{setCartItems,itemAddOnCart, cartItems}}>
+        <ThemeContext.Provider value={{setCartItems,itemAddOnCart, cartItems,itemSearch}}>
             <div className="wrapper clear">
                 {showCart && <Cart showCart={showCart} cartItems={cartItems} removeItemCart={removeItemCart}/>}
                 <Header hideShowCart={hideShowCart} changeSearchInput={changeSearchInput} searchValue={searchValue}/>
 
                 <main  className="main">
                     <Advertising/>
-                    <div className="productsItems">
-                        {itemSearch(items).map((item, idx) => (
-                            <ProductItem
-                                key={item.cost + idx}
-                                {...item}
-                                addOnCart={addOnCart}
+                    <Route path = "/" exact>
+                        <div className="productsItems">
+                            {itemSearch(items).map((item, idx) => (
+                                <ProductItem
+                                    key={item.cost + idx}
+                                    {...item}
+                                    addOnCart={addOnCart}
 
-                                // addButton={cartItems.some(obj=>obj.id === item.id)}
+                                    // addButton={cartItems.some(obj=>obj.id === item.id)}
 
-                            />
-                        ))}
-                    </div>
+                                />
+                            ))}
+                        </div>
+                    </Route>
+                    <Route path = "/orders">
+                        <Orders/>
+                    </Route>
+
+
                 </main>
                 <Footer/>
             </div>

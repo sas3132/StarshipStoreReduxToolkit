@@ -30,7 +30,7 @@ const Cart = ({removeItemCart, showCart}) => {
     const orderButton = async () => {
         try {
             if (cartItems.length > 0) {
-                const {data} = await axios.post('https://612e1f69d11e5c00175583a2.mockapi.io/orders', {data: orderTime() ,item: cartItems});
+                const {data} = await axios.post('https://612e1f69d11e5c00175583a2.mockapi.io/orders', {date: orderTime() ,item: cartItems});
                 setOrderID(data.id)
                 setCartItems([])
                 for (let i = 0; i < cartItems.length; i++) {
