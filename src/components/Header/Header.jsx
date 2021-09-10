@@ -35,7 +35,9 @@ const Header = ({hideShowCart, changeSearchInput, searchValue, setSearchValue}) 
                         />
                     </label>
                 </div>
-
+                <Link to="/orders">
+                <img  className={styles.orders} src="/img/order.svg" alt="order"/>
+                </Link>
                 <div className={styles.cartBlock} onClick={hideShowCart}>
                     <img className={styles.imgCart} src="/img/cart.svg" alt="cart"/>
 

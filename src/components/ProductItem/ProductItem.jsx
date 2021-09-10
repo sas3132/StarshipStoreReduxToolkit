@@ -3,7 +3,7 @@ import styles from './ProductItem.module.scss'
 import {ThemeContext} from "../../App";
 
 
-const ProductItem = ({id, name,description,cost,img,addOnCart,}) => {
+const ProductItem = ({id, name,description,cost,img,addOnCart,showOrders}) => {
 
 // const[onCart, setOnCart]=useState(addButton)
 const {itemAddOnCart} = useContext(ThemeContext)
@@ -31,7 +31,7 @@ const addedCartButton = () => {
                 </p>
                 <div className={styles.productButton}>
                     <b>Cost: {cost.toLocaleString()} credits</b>
-                    <img onClick={()=>addedCartButton()} src={itemAddOnCart(id) ?"/img/productOnCart.svg":"/img/buttonBuy1.svg"} alt="buy"/>
+                    {showOrders ? null : <img onClick={()=>addedCartButton()} src={itemAddOnCart(id) ?"/img/productOnCart.svg":"/img/buttonBuy1.svg"} alt="buy"/>}
                 </div>
             </div>
         </div>

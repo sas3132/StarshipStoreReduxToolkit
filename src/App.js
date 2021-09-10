@@ -58,10 +58,13 @@ import Orders from "./components/Orders/Orders";
 //     }
 // ]
 
-/*TODO
-Добавить фавориты а нужны ли, страница заказов тогда прокидывать react-router-dom
-заняться кнопкой заказа, анимация, может с отправкой на мыло!
- */
+/*
+TODO: Стилизация когда заказов нет, бэкграунд хан вейдер
+      Закрытие корзины по клику вне корзины
+      Регистрация?
+      Добавить фавориты а нужны ли, страница заказов тогда прокидывать react-router-dom
+      заняться кнопкой заказа, анимация, может с отправкой на мыло!
+      */
 
 
 
@@ -88,7 +91,7 @@ function App() {
                 setCartItems(cartResponse.data)
                 setItems(itemsResponse.data)
             } catch (err) {
-                alert("Ошибка загрузки данных")
+                alert("Data loading error")
                 console.error(err)
             }
         }
@@ -179,8 +182,9 @@ function App() {
                 <Header hideShowCart={hideShowCart} changeSearchInput={changeSearchInput} searchValue={searchValue}/>
 
                 <main  className="main">
-                    <Advertising/>
+
                     <Route path = "/" exact>
+                        <Advertising/>
                         <div className="productsItems">
                             {itemSearch(items).map((item, idx) => (
                                 <ProductItem
@@ -195,7 +199,9 @@ function App() {
                         </div>
                     </Route>
                     <Route path = "/orders">
-                        <Orders/>
+
+                            <Orders/>
+
                     </Route>
 
 
