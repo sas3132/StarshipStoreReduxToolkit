@@ -7,4 +7,9 @@ h4 {
   color: cyan;
 }
 
+.noOrders {
+  display: grid;
+  justify-items: center;
+}
+
 /*# sourceMappingURL=Orders.module.css.map */

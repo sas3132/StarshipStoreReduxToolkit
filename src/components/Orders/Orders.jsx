@@ -51,7 +51,7 @@ const Orders = () => {
                         </div>
                     </>
                 ))}
-            </div> : <h4>No orders</h4> )
+            </div> : <div className={styles.noOrders}><img src="/img/noOrders.png" alt="noOrders"/></div> )
 
     );
 };
