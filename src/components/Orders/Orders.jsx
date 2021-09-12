@@ -8,7 +8,6 @@ const Orders = () => {
 
 
     const [showOrders, setShowOrders] = useState([])
-    const[orderNumber, setOrderNumber] = useState([])
 
     const {itemSearch} = useContext(ThemeContext)
     useEffect(() => {
@@ -25,7 +24,7 @@ const Orders = () => {
         }
         fetchOrders();
     },[])
-    console.log(showOrders)
+
 
     return (
 
@@ -33,7 +32,7 @@ const Orders = () => {
 
                 {showOrders.map((item, idx) => (
                     <>
-                        <h2>Order number {item.id + item.date}</h2>
+                        <h2>Order № {item.id + item.date}</h2>
                         <div className="productsItems">
 
                             {itemSearch(item.item).map((item, idx) => (
@@ -51,7 +50,14 @@ const Orders = () => {
                         </div>
                     </>
                 ))}
-            </div> : <div className={styles.noOrders}><img src="/img/noOrders.png" alt="noOrders"/></div> )
+            </div> :  <div className={styles.noOrders}>
+                <div className={styles.itemOrder}>
+                    <img src="/img/noOrderPage.png" alt="orderImg"/>
+                    <section className={styles.NameItem}>
+                        <p className={styles.nameItemP}>No orders</p>
+                    </section>
+                </div>
+            </div>  )
 
     );
 };

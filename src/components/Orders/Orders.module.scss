@@ -12,7 +12,52 @@ h4 {
   color: cyan;
 }
 
-.noOrders {
-  display: grid;
-  justify-items: center;
-}
+
+
+
+
+  .noOrders {
+    display: grid;
+    color: red;
+    align-content: center;
+    justify-items: center;
+    margin: 0 18px 15px 18px;
+
+
+
+    .itemOrder {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows:auto repeat(3, 1fr);
+
+
+      img{
+        object-fit: cover;
+        object-position: center;
+        //height: 250px;
+        width: 300px;
+        opacity: 0.1;
+        grid-column: 1 / -1;
+        grid-row: 1 / -1;
+      }
+
+      .NameItem{
+        grid-column: 1 / -1;
+        grid-row: 3 / 4;
+        display: grid;
+        //grid-template-columns:1fr 30px;
+        align-items: center;
+        justify-content: center;
+
+        p {
+          color: #CCCCCC;
+          margin: 0 0 0 7px;
+          text-align: center;
+        }
+      }
+    }
+
+
+  }
+
+

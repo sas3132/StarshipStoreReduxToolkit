@@ -274,10 +274,13 @@ main {
   display: grid;
   grid-area: main;
   //margin-top: 20px;
-  align-content: start;
+
+  //align-content: start;// убрал для noOrders page
+
   grid-template-columns: minmax(auto, 1080px);
   //max-width: 1080px;
   margin: 20px auto 0 auto;
+
 }
 
 

@@ -253,7 +253,6 @@ button {
 main {
   display: grid;
   grid-area: main;
-  align-content: start;
   grid-template-columns: minmax(auto, 1080px);
   margin: 20px auto 0 auto;
 }

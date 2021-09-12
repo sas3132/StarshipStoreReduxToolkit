@@ -1,4 +1,4 @@
-import React, {createContext, useEffect, useState} from "react";
+import React, {createContext, useEffect, useRef, useState} from "react";
 import Header from "./components/Header/Header";
 import Cart from "./components/Cart/Cart";
 import Footer from "./components/Footer/Footer";
@@ -59,15 +59,11 @@ import Orders from "./components/Orders/Orders";
 // ]
 
 /*
-TODO: Стилизация когда заказов нет, бэкграунд хан вейдер
-      Закрытие корзины по клику вне корзины
+TODO: Решить проблему с закрытием корзины по кнопке
       Регистрация?
       Добавить фавориты а нужны ли, страница заказов тогда прокидывать react-router-dom
       заняться кнопкой заказа, анимация, может с отправкой на мыло!
       */
-
-
-
 
 
 export const ThemeContext = createContext({})
@@ -80,7 +76,7 @@ function App() {
     const [searchValue, setSearchValue] = useState('')
 
 
-    useEffect( () => {
+    useEffect(() => {
 
         async function fetchData() {
 
@@ -95,19 +91,25 @@ function App() {
                 console.error(err)
             }
         }
-        fetchData();
 
+        fetchData();
 
 
     }, [])
 
 
+
+
     const hideShowCart = () => {
         setShowCart(prev => !prev);
+
         if (!showCart) {
             document.body.style.overflow = 'hidden';
+
         } else {
-            document.body.removeAttribute("style");;
+
+            document.body.removeAttribute("style");
+
         }
     }
 
@@ -122,11 +124,11 @@ function App() {
             } else {
                 setCartItems((prev) => [...prev, obj])
                 const {data} = await axios.post("https://612e1f69d11e5c00175583a2.mockapi.io/cart", obj).then();
-                setCartItems((prev)=> prev.map(item => {
+                setCartItems((prev) => prev.map(item => {
                     if (item.parentId === data.parentId) {
                         return {
                             ...item,
-                            id:data.id
+                            id: data.id
                         }
                     }
                     return item;
@@ -176,14 +178,14 @@ function App() {
 
     return (
 
-        <ThemeContext.Provider value={{setCartItems,itemAddOnCart, cartItems,itemSearch}}>
+        <ThemeContext.Provider value={{setCartItems, itemAddOnCart, cartItems, itemSearch, hideShowCart}}>
             <div className="wrapper clear">
                 {showCart && <Cart showCart={showCart} cartItems={cartItems} removeItemCart={removeItemCart}/>}
-                <Header hideShowCart={hideShowCart} changeSearchInput={changeSearchInput} searchValue={searchValue}/>
+                <Header  hideShowCart={hideShowCart} changeSearchInput={changeSearchInput} searchValue={searchValue}/>
 
-                <main  className="main">
+                <main className="main">
 
-                    <Route path = "/" exact>
+                    <Route path="/" exact>
                         <Advertising/>
                         <div className="productsItems">
                             {itemSearch(items).map((item, idx) => (
@@ -198,9 +200,11 @@ function App() {
                             ))}
                         </div>
                     </Route>
-                    <Route path = "/orders">
 
-                            <Orders/>
+
+                    <Route path="/orders">
+
+                        <Orders/>
 
                     </Route>
 

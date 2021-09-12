@@ -1,4 +1,4 @@
-import React, {useContext, useState} from 'react';
+import React, {useContext, useEffect, useRef, useState} from 'react';
 import styles from './Cart.module.scss'
 import {logDOM} from "@testing-library/react";
 import axios from "axios";
@@ -7,10 +7,38 @@ import {ThemeContext} from "../../App";
 
 const Cart = ({removeItemCart, showCart}) => {
 
-    const[emptyCart, setEmptyCart]=useState(false)
+    const[emptyCart, setEmptyCart] = useState(false)
     const [orderID, setOrderID] = useState(null)
 
-    const {setCartItems, cartItems} = useContext(ThemeContext)
+    const {setCartItems, cartItems, hideShowCart} = useContext(ThemeContext)
+
+
+
+    function useClickOutsideHideCart(ref) {
+        useEffect(() => {
+            function handleClickOutside(event) {
+                if (ref.current && !ref.current.contains(event.target)) {
+                    hideShowCart();
+                }
+            }
+
+            document.addEventListener("mousedown", handleClickOutside);
+            return () => {
+                // Unbind the event listener on clean up
+                document.removeEventListener("mousedown", handleClickOutside);
+            };
+        }, [ref]);
+    }
+
+
+    const wrapperRef = useRef(null);
+    useClickOutsideHideCart(wrapperRef);
+
+
+
+
+
+
 
 
 
@@ -51,14 +79,14 @@ const Cart = ({removeItemCart, showCart}) => {
     return (
         // <div className={`${styles.cartDrawer} ${showCart ? document.body.style.overflow = 'hidden' : ''}`}>
         <div className={styles.cartDrawer}>
-            <div className={styles.cart}>
+            <div ref={wrapperRef} className={styles.cart}>
                 <h2>Cart</h2>
 
                     {emptyCart ? (<div className={styles.orderProcess}>
                             <div className={styles.itemOrder}>
-                                <img src="/img/order1.png" alt="orderImg"/>
+                                <img src="/img/noOrders.png" alt="orderImg"/>
                                 <section className={styles.NameItem}>
-                                    <p className={styles.nameItemP}>Order № {orderTime(orderID)} is processed</p>
+                                    <p className={styles.nameItemP}>Prepare you money, Order № {orderTime(orderID)} is processed</p>
                                 </section>
                             </div>
                         </div>)
