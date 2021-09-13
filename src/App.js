@@ -76,6 +76,11 @@ function App() {
     const [searchValue, setSearchValue] = useState('')
 
 
+
+
+
+
+
     useEffect(() => {
 
         async function fetchData() {
@@ -178,10 +183,10 @@ function App() {
 
     return (
 
-        <ThemeContext.Provider value={{setCartItems, itemAddOnCart, cartItems, itemSearch, hideShowCart}}>
+        <ThemeContext.Provider value={{setCartItems, itemAddOnCart, cartItems, itemSearch, hideShowCart, setShowCart}}>
             <div className="wrapper clear">
                 {showCart && <Cart showCart={showCart} cartItems={cartItems} removeItemCart={removeItemCart}/>}
-                <Header  hideShowCart={hideShowCart} changeSearchInput={changeSearchInput} searchValue={searchValue}/>
+                <Header  hideShowCart ={hideShowCart} changeSearchInput={changeSearchInput} searchValue={searchValue}/>
 
                 <main className="main">
 

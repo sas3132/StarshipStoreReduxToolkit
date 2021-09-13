@@ -29,8 +29,10 @@
 
     background: #191f20;
 
-    align-content: start;
+    //align-content: start;
     grid-template-rows: auto 1fr;
+
+
     //height: 91vh;
     height: calc(100vh - 63px); // либо 83
 
@@ -62,55 +64,55 @@
   //  }
   //}
 
-  //.orderProcessContainer {
-  //  display: grid;
-  //  justify-content: center; //контейнер для центровки эвока
+  .orderProcessContainer {
+    display: grid;
+    justify-content: center; //контейнер для центровки эвока
+    min-height: 100px;
+  .orderProcess {
+    display: grid;
+    color: red;
+    align-content: center;
+    justify-items: center;
+    margin: 0 18px 15px 18px;
+    min-height: 100px;
+    max-width: 300px;
 
-    .orderProcess {
+    .itemOrder {
       display: grid;
-      color: red;
-      align-content: center;
-      justify-items: center;
-      margin: 0 18px 15px 18px;
-      min-height: 100px;
-      max-width: 300px;
-
-      .itemOrder {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-rows:auto repeat(3, 1fr);
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows:auto repeat(3, 1fr);
 
 
-        img {
-          object-fit: contain;
-          object-position: center;
-          width: 100%;
-          //height: 300px;
-          opacity: 0.1;
-          grid-column: 1 / -1;
-          grid-row: 1 / -1;
-        }
-
-        .NameItem {
-          grid-column: 1 / -1;
-          grid-row: 3 / 4;
-          display: grid;
-          //grid-template-columns:1fr 30px;
-          align-items: center;
-          justify-content: center;
-
-          p {
-            color: #CCCCCC;
-            margin: 0 0 0 7px;
-            text-align: center;
-          }
-        }
+      img {
+        object-fit: contain;
+        object-position: center;
+        width: 100%;
+        //height: 300px;
+        opacity: 0.1;
+        grid-column: 1 / -1;
+        grid-row: 1 / -1;
       }
 
+      .NameItem {
+        grid-column: 1 / -1;
+        grid-row: 3 / 4;
+        display: grid;
+        //grid-template-columns:1fr 30px;
+        align-items: center;
+        justify-content: center;
 
+        p {
+          color: #CCCCCC;
+          margin: 0 0 0 7px;
+          text-align: center;
+        }
+      }
     }
 
 
+  }
+
+}
 
   .item {
     display: grid;

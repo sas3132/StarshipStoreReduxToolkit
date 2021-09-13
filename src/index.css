@@ -35,7 +35,7 @@ button {
 .wrapper {
   min-height: 100vh;
   display: grid;
-  grid-template: minmax(64px, auto) 1fr minmax(50px, auto)/1fr;
+  grid-template: minmax(64px, auto) 1fr minmax(55px, auto)/1fr;
   grid-template-areas: "header" "main" "footer";
 }
 
