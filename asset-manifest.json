@@ -1,24 +1,24 @@
 {
   "files": {
     "main.css": "/StarshipStoreReduxToolkit/static/css/main.c9292510.chunk.css",
-    "main.js": "/StarshipStoreReduxToolkit/static/js/main.fbe57952.chunk.js",
-    "main.js.map": "/StarshipStoreReduxToolkit/static/js/main.fbe57952.chunk.js.map",
+    "main.js": "/StarshipStoreReduxToolkit/static/js/main.478e505f.chunk.js",
+    "main.js.map": "/StarshipStoreReduxToolkit/static/js/main.478e505f.chunk.js.map",
     "runtime-main.js": "/StarshipStoreReduxToolkit/static/js/runtime-main.7fc08b6f.js",
     "runtime-main.js.map": "/StarshipStoreReduxToolkit/static/js/runtime-main.7fc08b6f.js.map",
     "static/css/2.9db43157.chunk.css": "/StarshipStoreReduxToolkit/static/css/2.9db43157.chunk.css",
-    "static/js/2.7065c6ee.chunk.js": "/StarshipStoreReduxToolkit/static/js/2.7065c6ee.chunk.js",
-    "static/js/2.7065c6ee.chunk.js.map": "/StarshipStoreReduxToolkit/static/js/2.7065c6ee.chunk.js.map",
+    "static/js/2.2f07bf54.chunk.js": "/StarshipStoreReduxToolkit/static/js/2.2f07bf54.chunk.js",
+    "static/js/2.2f07bf54.chunk.js.map": "/StarshipStoreReduxToolkit/static/js/2.2f07bf54.chunk.js.map",
     "index.html": "/StarshipStoreReduxToolkit/index.html",
     "static/css/2.9db43157.chunk.css.map": "/StarshipStoreReduxToolkit/static/css/2.9db43157.chunk.css.map",
     "static/css/main.c9292510.chunk.css.map": "/StarshipStoreReduxToolkit/static/css/main.c9292510.chunk.css.map",
-    "static/js/2.7065c6ee.chunk.js.LICENSE.txt": "/StarshipStoreReduxToolkit/static/js/2.7065c6ee.chunk.js.LICENSE.txt",
+    "static/js/2.2f07bf54.chunk.js.LICENSE.txt": "/StarshipStoreReduxToolkit/static/js/2.2f07bf54.chunk.js.LICENSE.txt",
     "static/media/Header.module.scss": "/StarshipStoreReduxToolkit/static/media/searchIcon.6386c800.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.7fc08b6f.js",
     "static/css/2.9db43157.chunk.css",
-    "static/js/2.7065c6ee.chunk.js",
+    "static/js/2.2f07bf54.chunk.js",
     "static/css/main.c9292510.chunk.css",
-    "static/js/main.fbe57952.chunk.js"
+    "static/js/main.478e505f.chunk.js"
   ]
 }
