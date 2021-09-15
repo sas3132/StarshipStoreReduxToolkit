@@ -9,7 +9,8 @@
     max-width: 1080px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(2, minmax(auto, 100vw));
+    //grid-template-columns: repeat(2, minmax(auto, 100vw));
+    grid-template-columns:minmax(auto, 100px) minmax(auto, 100vw);
 
     .contactBlock {
       display: grid;
@@ -22,7 +23,7 @@
         .gitImg {
 
           margin-right: 10px;
-          margin-left: 10px;
+          //margin-left: 9px;
           cursor: pointer;
         }
 
@@ -39,11 +40,16 @@
       justify-items: end;
       align-items: center;
       color: #CCCCCC;
-      font-size: 10px;
-      margin-right: 10px;
+      font-size: 12px;
+      //margin-right: 9px;
 
     }
 
   }
 
+  @media (max-width: 1080px) {
+    .footerContainer {
+      padding: 0 9px;
+    }
+  }
 }

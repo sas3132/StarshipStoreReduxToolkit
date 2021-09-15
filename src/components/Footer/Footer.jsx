@@ -13,7 +13,7 @@ const Footer = () => {
                 </div >
             </div>
             <div className={styles.dateBlock} >
-                <p>sas31 2021</p>
+                <p>Designed and developed by Sas31 © 2021. StarshipStore.</p>
             </div>
             </div>
         </footer>
