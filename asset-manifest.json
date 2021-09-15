@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/StarshipStoreReduxToolkit/static/css/main.c9292510.chunk.css",
-    "main.js": "/StarshipStoreReduxToolkit/static/js/main.cb72c6c3.chunk.js",
-    "main.js.map": "/StarshipStoreReduxToolkit/static/js/main.cb72c6c3.chunk.js.map",
+    "main.js": "/StarshipStoreReduxToolkit/static/js/main.fe31833b.chunk.js",
+    "main.js.map": "/StarshipStoreReduxToolkit/static/js/main.fe31833b.chunk.js.map",
     "runtime-main.js": "/StarshipStoreReduxToolkit/static/js/runtime-main.7fc08b6f.js",
     "runtime-main.js.map": "/StarshipStoreReduxToolkit/static/js/runtime-main.7fc08b6f.js.map",
     "static/css/2.9db43157.chunk.css": "/StarshipStoreReduxToolkit/static/css/2.9db43157.chunk.css",
@@ -19,6 +19,6 @@
     "static/css/2.9db43157.chunk.css",
     "static/js/2.1ba26b53.chunk.js",
     "static/css/main.c9292510.chunk.css",
-    "static/js/main.cb72c6c3.chunk.js"
+    "static/js/main.fe31833b.chunk.js"
   ]
 }
