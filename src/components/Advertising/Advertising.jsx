@@ -32,13 +32,13 @@ const Advertising = () => {
             <div className={styles.centeredText}>Buy now <span style={{color: '#D4E3EA', whiteSpace: 'nowrap'}}> Fly now</span>
                 </div>
                 <SwiperSlide >
-                    <img   src="/img/cover1.jpg" alt="buy"/>
+                    <img   src="img/cover1.jpg" alt="buy"/>
                 </SwiperSlide>
                 <SwiperSlide>
-                    <img src="/img/cover.jpg" alt="buy"/>
+                    <img src="img/cover.jpg" alt="buy"/>
                 </SwiperSlide>
                 <SwiperSlide>
-                    <img src="/img/cover2.jpg" alt="buy"/>
+                    <img src="img/cover2.jpg" alt="buy"/>
                 </SwiperSlide>
 
 

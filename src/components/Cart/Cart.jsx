@@ -85,7 +85,7 @@ const Cart = ({removeItemCart, showCart}) => {
 
                     {emptyCart ? (<div className={styles.orderProcessContainer}> <div className={styles.orderProcess}>
                             <div className={styles.itemOrder}>
-                                <img src="/img/noOrders.png" alt="orderImg"/>
+                                <img src="img/noOrders.png" alt="orderImg"/>
                                 <section className={styles.NameItem}>
                                     <p className={styles.nameItemP}>Prepare you money, Order № {orderTime(orderID)} is processed</p>
                                 </section>
@@ -98,14 +98,16 @@ const Cart = ({removeItemCart, showCart}) => {
                             <section className={styles.delNameItem}>
                                 <p className={styles.delNameItemP}>{obj.name}</p>
                                 <img onClick={() => removeItemCart(obj.id)} className={styles.delItemCart}
-                                     src="/img/delItemCart.svg" alt=""/>
+                                     src="img/delItemCart.svg" alt=""/>
                             </section>
                         </div>
                     ))}</div>)}
 
-
                 <p className={styles.totalCred}>{}Total: {total.toLocaleString()} cred.</p>
-                <button onClick={orderButton} className={styles.buttonCheckout}>Checkout</button>
+                {emptyCart ? (<button onClick={hideShowCart} className={styles.buttonCheckout}>Back</button>):
+                    (<button onClick={orderButton} className={styles.buttonCheckout}>Checkout</button>
+                    )}
+
             </div>
 
         </div>
@@ -116,7 +118,7 @@ export default Cart;
 
 // <div className={styles.orderProcess}>
 // <div className={styles.itemOrder}>
-//     <img src="/img/order1.png" alt="orderImg"/>
+//     <img src="img/order1.png" alt="orderImg"/>
 //     <section className={styles.NameItem}>
 //         <p className={styles.nameItemP}>Order</p>
 //     </section>
@@ -124,4 +126,4 @@ export default Cart;
 // </div>
 
 
-// <div className={styles.orderProcess}><img src="/img/order1.png" alt="orderImg"/>orders</div>
+// <div className={styles.orderProcess}><img src="img/order1.png" alt="orderImg"/>orders</div>

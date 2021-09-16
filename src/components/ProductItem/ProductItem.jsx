@@ -31,7 +31,7 @@ const addedCartButton = () => {
                 </p>
                 <div className={styles.productButton}>
                     <b>Cost: {cost.toLocaleString()} credits</b>
-                    {showOrders ? null : <img onClick={()=>addedCartButton()} src={itemAddOnCart(id) ?"/img/productOnCart.svg":"/img/buttonBuy1.svg"} alt="buy"/>}
+                    {showOrders ? null : <img onClick={()=>addedCartButton()} src={itemAddOnCart(id) ?"img/productOnCart.svg":"img/buttonBuy1.svg"} alt="buy"/>}
                 </div>
             </div>
         </div>

@@ -8,8 +8,10 @@ const Footer = () => {
             <div className={styles.footerContainer}>
             <div className={styles.contactBlock}>
                 <div className={styles.contactImg} >
-                <img className={styles.gitImg} src="/img/gitFoote.svg" alt="git"/>
-                <img className={styles.telegImg} src="/img/telegFooter.svg" alt="telegram"/>
+                    <a href="https://github.com/sas3132"><img className={styles.gitImg} src="img/gitFoote.svg" alt="git"/></a>
+                    <a href="https://t.me/sas31sas"><img className={styles.telegImg} src="img/telegFooter.svg" alt="telegram"/></a>
+
+
                 </div >
             </div>
             <div className={styles.dateBlock} >

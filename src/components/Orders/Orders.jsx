@@ -31,10 +31,10 @@ const Orders = () => {
             (showOrders.length > 0 ? <div className={styles.orders}>
 
                 {showOrders.map((item, idx) => (
-                    <>
-                        <h2>Order № {item.id + item.date}</h2>
-                        <div className="productsItems">
 
+                    <div key={item.date + idx}>
+                        <h2 >Order № {item.id + item.date}</h2>
+                        <div className="productsItems" >
                             {itemSearch(item.item).map((item, idx) => (
                                 <ProductItem
                                     key={item.cost + idx}
@@ -48,11 +48,11 @@ const Orders = () => {
                             ))}
 
                         </div>
-                    </>
+                    </div>
                 ))}
             </div> :  <div className={styles.noOrders}>
                 <div className={styles.itemOrder}>
-                    <img src="/img/noOrderPage.png" alt="orderImg"/>
+                    <img src="img/noOrderPage.png" alt="orderImg"/>
                     <section className={styles.NameItem}>
                         <p className={styles.nameItemP}>No orders</p>
                     </section>

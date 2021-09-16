@@ -18,7 +18,7 @@ const Header = ({hideShowCart, changeSearchInput, searchValue, setSearchValue}) 
             <div className={styles.container}>
                 <Link to="/">
                     <div className={styles.logoImg}>
-                        <img src="/img/logo.png" alt="logo"/>
+                        <img src="img/logo.png" alt="logo"/>
                     </div>
                 </Link>
 
@@ -36,10 +36,10 @@ const Header = ({hideShowCart, changeSearchInput, searchValue, setSearchValue}) 
                     </label>
                 </div>
                 <Link to="/orders">
-                <img  className={styles.orders} src="/img/order.svg" alt="order"/>
+                <img  className={styles.orders} src="img/order.svg" alt="order"/>
                 </Link>
                 <div  className={styles.cartBlock} onClick={hideShowCart}>
-                    <img className={styles.imgCart} src="/img/cart.svg" alt="cart"/>
+                    <img className={styles.imgCart} src="img/cart.svg" alt="cart"/>
 
                     <span style={{whiteSpace: 'nowrap'}}>{total.toLocaleString()} cred.</span>
                 </div>
